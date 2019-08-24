@@ -1,6 +1,6 @@
 node {
     stage("Say Hello"){
-        properties([pipelineTriggers([cron('* * * * *')])])
-        sh "echo Hello ${NAME}"
+        properties([parameters([string(defaultValue: 'Fahriddin', description: 'adds a name', name: 'NAME', trim: false)]), pipelineTriggers([cron('* * * * *')])])
+        git 'https://github.com/fahriddin23/jenkins.git'
     }
 }
