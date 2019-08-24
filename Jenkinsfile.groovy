@@ -13,6 +13,6 @@ node {
         sh "ssh ec2-user@${Remote_instaces} sudo mv /tmp/index.html /var/www/html/index.html"
     }
     stage ("restart httpd"){
-        sh "sh ec2-user@${Remote_instace} sudo systemctl restart httpd"
+        sh "ssh ec2-user@${Remote_instace} sudo systemctl restart httpd"
     }
 }
