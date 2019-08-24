@@ -4,7 +4,7 @@ node {
         git 'https://github.com/fahriddin23/jenkins.git'
     }
     stage ("Install Apache"){
-        sh "ssh ec2-user@ ${Remote_instances} sudo yum install httpd -y"
+        sh "ssh ec2-user@${Remote_instances} sudo yum install httpd -y"
     }
     stage ("Create Index.html"){
         sh "scp index.html ec2-user@${Remote_instaces}:tmp"
